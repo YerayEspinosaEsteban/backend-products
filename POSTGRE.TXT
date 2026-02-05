@@ -1,0 +1,55 @@
+--- DATOS DE CONEXIÓN (ÚNICA BASE DE DATOS) ---
+Host: database-1.cp8kmyauagad.us-east-1.rds.amazonaws.com
+Puerto: 5432
+Usuario: postgres
+Base de Datos: postgres
+Contraseña: LUCASLUCAS
+
+--- ESTADO ACTUAL ---
+✅ Conexión verificada a database-1
+✅ Tabla 'usuarios' lista.
+✅ Tabla 'products' lista con datos insertados.
+
+--- COMANDOS RÁPIDOS ---
+
+POWERSHELL:
+-----------
+$env:PGPASSWORD='LUCASLUCAS'; psql -h database-1.cp8kmyauagad.us-east-1.rds.amazonaws.com -p 5432 -U postgres -d postgres
+
+GIT BASH:
+---------
+export PGPASSWORD='LUCASLUCAS'
+psql -h database-1.cp8kmyauagad.us-east-1.rds.amazonaws.com -p 5432 -U postgres -d postgres
+export PGPASSWORD='LUCASLUCAS'
+psql -h database-1.cp8kmyauagad.us-east-1.rds.amazonaws.com -p 5432 -U postgres -d postgres -P pager=off
+
+--- COMANDOS ÚTILES ---
+\dt          -> Ver tablas
+SELECT * FROM products; -> Ver los productos
+\q          -> Salir
+
+
+[ec2-user@ip-172-31-27-222 app]$ cat docker-compose.yml
+services:
+  api:
+    image: ghcr.io/yerayespinosaesteban/backend-products:latest
+    container_name: api-products
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+[ec2-user@ip-172-31-27-222 app]$ ^C
+[ec2-user@ip-172-31-27-222 app]$ 
+[ec2-user@ip-172-31-27-222 app]$ cat docker-compose.yml
+services:
+  api:
+    image: ghcr.io/yerayespinosaesteban/backend-products:latest
+    container_name: api-products
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+[ec2-user@ip-172-31-27-222 app]$ ^C
+[ec2-user@ip-172-31-27-222 app]$ 
