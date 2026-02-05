@@ -28,4 +28,4 @@ jobs:
           context: ./backend-products
           file: ./backend-products/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/yerayespinosaesteban/backend-products:latest
